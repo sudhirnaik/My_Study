@@ -1,11 +1,14 @@
-package practice;
+package practice.Recurssion;
 
+import practice.ListNode;
+
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
-public class Recussion {
+public class Recurssion {
 
 
     public static void main(String[] args) {
@@ -53,8 +56,16 @@ public class Recussion {
 
     }
 
-    public Recussion(){
+    public Recurssion(){
 
+    }
+
+    static BigDecimal nCr(int n, int r) {
+        if (n==r) return new BigDecimal(1);
+        BigDecimal a = new BigDecimal(n);
+        BigDecimal b = new BigDecimal(n-r);
+        BigDecimal multiply =  a.divide(b, 10, BigDecimal.ROUND_HALF_UP);
+        return multiply.multiply(nCr(n-1, r));
     }
 
     public static void findSubstrings(String str) {
