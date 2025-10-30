@@ -20,8 +20,17 @@ Output: [a, ab, abc, ac, b, bc, c]
         //System.out.println(sumOfNumbers(3));
         //System.out.println(nCr(5,3));
         //System.out.println(isPalindrome("cc"));
-        System.out.println(countOfString("babdab","ab"));
+        //System.out.println(countOfString("babdab","ab"));
+        System.out.println(numberOfPathinMatrix(2,2));// going only right and down
 
+    }
+
+    static int numberOfPathinMatrix(int m, int n) {
+        if (m==1 || n==1) {
+            return 1;
+        }
+
+        return numberOfPathinMatrix(m-1, n)+ numberOfPathinMatrix(m, n-1);
     }
     static int sumOfNumbers(int n) {
         if (n == 1) {
@@ -46,6 +55,7 @@ Output: [a, ab, abc, ac, b, bc, c]
         BigDecimal multiply =  a.divide(b, 10, BigDecimal.ROUND_HALF_UP);
         return multiply.multiply(nCr(n-1, r));
     }
+
 
     //Count of string in givrn string
     static int countOfString(String main, String child) {

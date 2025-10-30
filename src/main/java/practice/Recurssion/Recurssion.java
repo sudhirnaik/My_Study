@@ -3,8 +3,7 @@ package practice.Recurssion;
 import practice.ListNode;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -82,6 +81,7 @@ public class Recurssion {
         findSubstringsHelper(str, curr+str.charAt(i), i+1);
         findSubstringsHelper(str, curr, i+1);
     }
+
 
     // sprint out number
     public static void printNaturalNums(Integer n) {

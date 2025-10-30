@@ -3,7 +3,7 @@ package practice.BackTracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenParenthesis {
+public class GenerateParenthesis {
     public static void main (String[] args){
         System.out.println(AllParenthesis(3));
     }
