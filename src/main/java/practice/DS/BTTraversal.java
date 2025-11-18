@@ -24,14 +24,43 @@ public class BTTraversal {
      /  \    \
      3   4    6*/
 
-        //System.out.println(depthFirst(node1));
+        System.out.println(depthFirst(node1));
         //System.out.println(depthFirstRec(node1));
         //System.out.println(breadthFirst(node1));
         //System.out.println(treeContainsRec(node1, 10));
         //System.out.println(treeContains(node1 ,5));
-        System.out.println(treeSum(node1));
+        //System.out.println(treeSum(node1));
+        //printLeaves(node1);
       }
-    // output 1,2,3,4,5,6
+
+
+
+
+
+
+
+
+
+
+
+    /*public static void printLeaves(BinaryTreeNode head) {
+        if (head==null){
+            return;
+        }
+
+        if (head.left==null && head.right==null) {
+            System.out.print(head.data+", ");
+            return;
+        }
+        if (head.left!=null){
+            printLeaves(head.left);
+        }
+        if (head.right!=null) {
+            printLeaves(head.right);
+        }
+    }*/
+
+      // output 1,2,3,4,5,6
     public static List<Integer> depthFirst(BinaryTreeNode head) {
         List<Integer> result = new ArrayList<>();
         if (head==null) return result;

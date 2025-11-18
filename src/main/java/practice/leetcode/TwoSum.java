@@ -2,6 +2,8 @@ package practice.leetcode;
 
 import practice.ListNode;
 
+import java.util.List;
+
 public class TwoSum {
 
     /*You are given two non-empty linked lists representing two non-negative integers.
@@ -11,7 +13,7 @@ public class TwoSum {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(2);
         ListNode n2 = new ListNode(4);
-        ListNode n3 = new ListNode(3);
+        ListNode n3 = new ListNode(9);
 
 
         n1.setNext(n2);
@@ -19,14 +21,51 @@ public class TwoSum {
 
         ListNode n4 = new ListNode(5);
         ListNode n5 = new ListNode(6);
-        ListNode n6 = new ListNode(4);
+        ListNode n6 = new ListNode(9);
 
 
         n4.setNext(n5);
         n5.setNext(n6);
 
 
-        addTwoNumbers(n1, n4);
+        //ListNode res = addTwoNumbers(n1, n4);
+        ListNode res = addTwoNumbersRec(n1, n4);
+        printLinkedList(res);
+
+    }
+
+    public static ListNode addTwoNumbersRec(ListNode l1, ListNode l2) {
+        boolean carry = false;
+        return addTwoNumbersRecHelper( l1,  l2, carry);
+    }
+
+    public static ListNode addTwoNumbersRecHelper(ListNode l1, ListNode l2, boolean carry) {
+        if (l1==null && l2==null) {
+            if (carry) {
+                return new ListNode(1);
+            } else {
+                return null;
+            }
+        }
+        int sum = ((carry)?1:0);
+        if (l1!=null) {
+            sum += l1.getData();
+        }
+        if (l2!=null) {
+            sum += l2.getData();
+        }
+        int digit = sum%10;
+        ListNode head = new ListNode(digit);
+        head.setNext(addTwoNumbersRecHelper((l1!=null)?l1.getNext():null, (l2!=null)?l2.getNext():null, (sum>=10)? true:false));
+        return head;
+    }
+
+    public static void printLinkedList(ListNode head) {
+        ListNode curr = head;
+        while (curr!=null) {
+            System.out.print(curr.getData());
+            curr = curr.getNext();
+        }
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2){

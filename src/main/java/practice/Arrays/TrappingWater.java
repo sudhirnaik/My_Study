@@ -7,7 +7,8 @@ import java.util.Arrays;
 /// formula : Math.min(left[i], right[i])-arr[i]
 public class TrappingWater {
     public static void main(String[] args) {
-        int[] arr = {3, 1, 2, 4, 0, 1, 3, 2};
+        int[] arr = {12, 15, 4, 14, 15, 15};
+        //int[] arr = {3, 1, 2, 4, 0, 1, 3, 2};
         int[] leftMax = new int[arr.length];
         leftMax[0] = arr[0];
         int[] rightMax = new int[arr.length];
